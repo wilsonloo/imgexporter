@@ -1,4 +1,4 @@
-local bson = require "3rd/bson/bson"
+local bson = require "bson"
 local tinsert = table.insert
 
 local mt = {}
@@ -10,7 +10,7 @@ mt.__index = mt
 function mt:line(x1, y1, x2, y2, ...)
     local color
     local points = {...}
-    if #list % 2 == 1 then
+    if #points % 2 == 1 then
         -- 默认颜色
         assert(x1, "x1")
         assert(y1, "y1")
@@ -57,7 +57,7 @@ function mt:write(filename)
     local f = io.open(filename, 'w')
     f:write(ret)
     f:close()
-    print("written to "...filename)
+    print("written to "..filename)
 end
 
 local M = {}

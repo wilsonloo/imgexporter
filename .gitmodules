@@ -1,3 +1,0 @@
-[submodule "3rd/bson"]
-	path = 3rd/bson
-	url = https://github.com/cloudwu/lua-bson.git

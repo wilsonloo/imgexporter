@@ -1,4 +1,5 @@
 local bson = require "bson"
+local cjson = require "cjson"
 local tinsert = table.insert
 
 local mt = {}
@@ -52,7 +53,7 @@ function mt:rect(x, y, w, h, param)
 end
 
 function mt:write(filename)
-    local ret = bson.encode(self)
+    local ret = cjson.encode(self)
     print("ret:", ret)
     local f = io.open(filename, 'w')
     f:write(ret)

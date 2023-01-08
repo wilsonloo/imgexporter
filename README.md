@@ -1,8 +1,11 @@
 # Lov2d Image Exporter
+将绘制信息导出json文件，再由love2d 进行绘制生成最终图片
 
 
-
-## Getting started
+## Building
+```sh
+make
+```
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 

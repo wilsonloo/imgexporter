@@ -1,3 +1,4 @@
+local bson = require "3rd/bson/bson"
 local tinsert = table.insert
 
 local mt = {}
@@ -51,7 +52,12 @@ function mt:rect(x, y, w, h, param)
 end
 
 function mt:write(filename)
-    
+    local ret = bson.encode(self)
+    print("ret:", ret)
+    local f = io.open(filename, 'w')
+    f:write(ret)
+    f:close()
+    print("written to "...filename)
 end
 
 local M = {}

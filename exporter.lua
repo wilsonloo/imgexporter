@@ -11,7 +11,7 @@ mt.__index = mt
 function mt:line(x1, y1, x2, y2, ...)
     local color
     local points = {...}
-    if #points % 2 == 1 then
+    if #points % 2 == 0 then
         -- 默认颜色
         assert(x1, "x1")
         assert(y1, "y1")

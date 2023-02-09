@@ -34,27 +34,23 @@ function mt:line(x1, y1, x2, y2, ...)
     })
 end
 
-function mt:rect(x, y, w, h, param)
-    local color
-    if param then
-        color = x
-        x = y
-        y = w
-        w = h
-        h = param
-    end
+function mt:rect_color(color, x, y, w, h, id)
     tinsert(self.rects, {
         color = color,
         x = x,
         y = y,
         w = w,
         h = h,
+        id = id,
     })
+end
+
+function mt:rect(x, y, w, h, id)
+    self:rect_color(nil, x, y, w, h, id)
 end
 
 function mt:write(filename)
     local ret = cjson.encode(self)
-    print("ret:", ret)
     local f = io.open(filename, 'w')
     f:write(ret)
     f:close()

@@ -1,6 +1,6 @@
 [submodule "3rd/bson"]
 	path = 3rd/bson
-	url = git@localhost:wilson/lua-bson.git
+	url = git@github.com:wilsonloo/lua-bson.git
 [submodule "3rd/cjson"]
 	path = 3rd/cjson
-	url = git@localhost:wilson/lua-cjson.git
+	url = git@github.com:wilsonloo/lua-cjson.git

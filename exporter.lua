@@ -5,7 +5,7 @@ local tinsert = table.insert
 local mt = {}
 mt.__index = mt
 
---- 绘制线段
+--- 绘制线段，坐标系原点在左上角，向右向下为正轴
 --- line(color, x1, y1, x2, y2 [,...])
 --- line(x1, y1, x2, y2 [, ...])
 function mt:line(x1, y1, x2, y2, ...)
@@ -34,6 +34,7 @@ function mt:line(x1, y1, x2, y2, ...)
     })
 end
 
+-- 绘制矩形，坐标系原点在左上角，向右向下为正轴
 function mt:rect_color(color, x, y, w, h, id)
     tinsert(self.rects, {
         color = color,
@@ -45,6 +46,7 @@ function mt:rect_color(color, x, y, w, h, id)
     })
 end
 
+-- 绘制矩形，坐标系原点在左上角，向右向下为正轴
 function mt:rect(x, y, w, h, id)
     self:rect_color(nil, x, y, w, h, id)
 end
